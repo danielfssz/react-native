@@ -1,38 +1,22 @@
-import React from "react";
-import { Text, View, AppRegistry, TouchableOpacity } from "react-native";
+import React, { Component } from 'react';
+import { AppRegistry, View, Image } from 'react-native';
 
-const Estilos = {
-  principal: {
-    paddingTop: 40
-  },
-  botao: {
-    backgroundColor: '#48BBEC',
-    padding: 10,
-    borderColor: '#1d8eb8',
-    borderWidth: 3,
-    borderRadius: 8
-  }, 
-  textoBotao:{
-    color: '#fff',
-    fontSize: 16,
-    fontWeight: 'bold',
-    alignSelf: 'center'
+class DisplayAnImage extends Component {
+  render() {
+    return (
+      <View>
+        <Image
+          style={{ width: 50, height: 50 }}
+          source={{ uri: 'https://facebook.github.io/react-native/docs/assets/favicon.png' }}
+        />
+        <Image
+          style={{ width: 66, height: 58 }}
+          source={{ uri: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADMAAAAzCAYAAAA6oTAqAAAAEXRFWHRTb2Z0d2FyZQBwbmdjcnVzaEB1SfMAAABQSURBVGje7dSxCQBACARB+2/ab8BEeQNhFi6WSYzYLYudDQYGBgYGBgYGBgYGBgYGBgZmcvDqYGBgmhivGQYGBgYGBgYGBgYGBgYGBgbmQw+P/eMrC5UTVAAAAABJRU5ErkJggg==' }}
+        />
+      </View>
+    );
   }
-};
-
-const botaoPressionado = () => {
-  alert('Botao Pressionado');
 }
 
-const App = () => {
-  const { principal, botao, textoBotao } = Estilos;
-  return (
-    <View style={principal}>
-      <TouchableOpacity style={botao}>
-        <Text style={textoBotao}>Clique aqui</Text>
-      </TouchableOpacity>
-    </View>
-  );
-};
-
-AppRegistry.registerComponent('app2', () => App);
+// skip this line if using Create React Native App
+AppRegistry.registerComponent('app2', () => DisplayAnImage);
