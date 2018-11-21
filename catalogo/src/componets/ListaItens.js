@@ -23,7 +23,7 @@ export default class catologo extends Component {
 
   render() {
     return (
-      <ScrollView>
+      <ScrollView style={{backgroundColor: '#DDD'}}>
         {this.state.listaItens.map(item => (
           <Item key={item.titulo} item={item} />
         ))}
