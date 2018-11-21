@@ -1,5 +1,5 @@
 import React from "react";
-import { AppRegistry, View, Image, TouchableOpacity, Text } from "react-native";
+import { AppRegistry, View, Image, TouchableOpacity, Text, Alert } from "react-native";
 
 const Estilos = {
     principal: {
@@ -15,7 +15,7 @@ const Estilos = {
     },
     textoBotao: {
         color: 'white',
-        fontSize: 16,
+        fontSize: 20,
         fontWeight: 'bold'
     }
 }
@@ -30,7 +30,7 @@ const gerarFrase = () => {
     frases[3] = 'Lorem ipsum sociosqu molestie dictumst donec, a eu tellus aenean odio, curabitur sodales curabitur felis. ';
     frases[4] = 'Donec leo vivamus curabitur dictum pharetra netus dictum torquent, posuere vivamus amet quisque inceptos id. ';
 
-    alert(frases[nAleatorio]);    
+    Alert.alert(frases[nAleatorio]);    
 }
 
 const App = () => {
