@@ -4,12 +4,17 @@ import Item from "../componets/Item";
 import axios from "axios";
 
 export default class catologo extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { listaItens: [] };
+  }
+
   componentWillMount() {
     //Requisição http
     axios
       .get("http://faus.com.br/recursos/c/dmairr/api/itens.html")
       .then(res => {
-        console.log(res);
+        this.setState({ listaItens: res.data });
       })
       .catch(err => {
         console.log(err);
@@ -17,12 +22,6 @@ export default class catologo extends Component {
   }
 
   render() {
-    return (
-      <View>
-        <Item />
-        <Item />
-        <Item />
-      </View>
-    );
+    return <View>{console.log(this.state.listaItens)}</View>;
   }
 }
