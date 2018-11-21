@@ -61,43 +61,68 @@ class jockeypo extends Component {
     return (
       <View>
         <Topo />
-        <View style={styles.palco}>
-          <View style={styles.pnlAcoes}>
-            <View style={styles.btnEscolha}>
-              <Button
-                title="pedra"
-                onPress={() => {
-                  this.jokenpo("Pedra");
-                }}
-              />
-            </View>
-            <View style={styles.btnEscolha}>
-              <Button
-                title="papel"
-                onPress={() => {
-                  this.jokenpo("Papel");
-                }}
-              />
-            </View>
-            <View style={styles.btnEscolha}>
-              <Button
-                title="tesoura"
-                onPress={() => {
-                  this.jokenpo("Tesoura");
-                }}
-              />
-            </View>
+        <View style={styles.pnlAcoes}>
+          <View style={styles.btnEscolha}>
+            <Button
+              title="pedra"
+              onPress={() => {
+                this.jokenpo("Pedra");
+              }}
+            />
           </View>
-          <Text style={styles.txtResultado}>
-            Resultado: {this.state.resultado}
-          </Text>
-          <Text>Escolha do computador: {this.state.escolhaComputador}</Text>
-          <Image source={require("./imgs/papel.png")} />
-          <Text>Escolha do usuário: {this.state.escolhaUsuario}</Text>
-          <Image source={require("./imgs/papel.png")} />
+          <View style={styles.btnEscolha}>
+            <Button
+              title="papel"
+              onPress={() => {
+                this.jokenpo("Papel");
+              }}
+            />
+          </View>
+          <View style={styles.btnEscolha}>
+            <Button
+              title="tesoura"
+              onPress={() => {
+                this.jokenpo("Tesoura");
+              }}
+            />
+          </View>
+        </View>
+        <View style={styles.palco}>
+          <Text style={styles.txtResultado}>{this.state.resultado}</Text>
+          <Icone escolha={this.state.escolhaComputador} jogador="Computador" />
+          <Icone escolha={this.state.escolhaUsuario} jogador="Usuário" />
         </View>
       </View>
     );
+  }
+}
+
+class Icone extends Component {
+  render() {
+    if (this.props.escolha == "Papel") {
+      return (
+        <View style={styles.item}>
+          <Text style={styles.txtJogador}>{this.props.jogador}</Text>
+          <Image source={require("./imgs/papel.png")} />
+        </View>
+      );
+    } else if (this.props.escolha == "Pedra") {
+      return (
+        <View style={styles.item}>
+          <Text style={styles.txtJogador}>{this.props.jogador}</Text>
+          <Image source={require("./imgs/pedra.png")} />
+        </View>
+      );
+    } else if (this.props.escolha == "Tesoura") {
+      return (
+        <View style={styles.item}>
+          <Text style={styles.txtJogador}>{this.props.jogador}</Text>
+          <Image source={require("./imgs/tesoura.png")} />
+        </View>
+      );
+    } else {
+      return false;
+    }
   }
 }
 
@@ -131,6 +156,13 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     color: "red",
     height: 60
+  },
+  item: {
+    alignItems: "center",
+    marginBottom: 20
+  },
+  txtJogador: {
+    fontSize: 18
   }
 });
 
