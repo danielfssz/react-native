@@ -1,5 +1,12 @@
 import React, { Component } from "react";
-import { AppRegistry, StyleSheet, Text, View, Button } from "react-native";
+import {
+  AppRegistry,
+  Image,
+  Text,
+  View,
+  Button,
+  StyleSheet
+} from "react-native";
 
 class jockeypo extends Component {
   constructor(props) {
@@ -53,30 +60,78 @@ class jockeypo extends Component {
   render() {
     return (
       <View>
-        <Text>Escolha do computador: {this.state.escolhaComputador}</Text>
-        <Text>Escolha do usuário: {this.state.escolhaUsuario}</Text>
-        <Text>Resultado: {this.state.resultado}</Text>
-        <Button
-          title="pedra"
-          onPress={() => {
-            this.jokenpo("Pedra");
-          }}
-        />
-        <Button
-          title="papel"
-          onPress={() => {
-            this.jokenpo("Papel");
-          }}
-        />
-        <Button
-          title="tesoura"
-          onPress={() => {
-            this.jokenpo("Tesoura");
-          }}
-        />
+        <Topo />
+        <View style={styles.palco}>
+          <View style={styles.pnlAcoes}>
+            <View style={styles.btnEscolha}>
+              <Button
+                title="pedra"
+                onPress={() => {
+                  this.jokenpo("Pedra");
+                }}
+              />
+            </View>
+            <View style={styles.btnEscolha}>
+              <Button
+                title="papel"
+                onPress={() => {
+                  this.jokenpo("Papel");
+                }}
+              />
+            </View>
+            <View style={styles.btnEscolha}>
+              <Button
+                title="tesoura"
+                onPress={() => {
+                  this.jokenpo("Tesoura");
+                }}
+              />
+            </View>
+          </View>
+          <Text style={styles.txtResultado}>
+            Resultado: {this.state.resultado}
+          </Text>
+          <Text>Escolha do computador: {this.state.escolhaComputador}</Text>
+          <Image source={require("./imgs/papel.png")} />
+          <Text>Escolha do usuário: {this.state.escolhaUsuario}</Text>
+          <Image source={require("./imgs/papel.png")} />
+        </View>
       </View>
     );
   }
 }
+
+class Topo extends Component {
+  render() {
+    return (
+      <View style={styles.topo}>
+        <Image source={require("./imgs/jokenpo.png")} />
+      </View>
+    );
+  }
+}
+
+const styles = StyleSheet.create({
+  btnEscolha: {
+    width: 90
+  },
+  pnlAcoes: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    margin: 10
+  },
+  topo: {
+    justifyContent: "center"
+  },
+  palco: {
+    alignItems: "center"
+  },
+  txtResultado: {
+    fontSize: 25,
+    fontWeight: "bold",
+    color: "red",
+    height: 60
+  }
+});
 
 AppRegistry.registerComponent("jockeypo", () => jockeypo);
