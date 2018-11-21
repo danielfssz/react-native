@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View } from "react-native";
+import { View, Text } from "react-native";
 import Item from "../componets/Item";
 import axios from "axios";
 
@@ -22,6 +22,12 @@ export default class catologo extends Component {
   }
 
   render() {
-    return <View>{console.log(this.state.listaItens)}</View>;
+    return (
+      <View>
+        {this.state.listaItens.map(item => {
+          return <Text>{item.titulo}</Text>;
+        })}
+      </View>
+    );
   }
 }
