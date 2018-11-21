@@ -1,7 +1,11 @@
-/** @format */
+import React, { Component } from "react";
+import { AppRegistry, View } from "react-native";
+import ListaItens from "./src/componets/ListaItens";
 
-import {AppRegistry} from 'react-native';
-import App from './App';
-import {name as appName} from './app.json';
+class catalogo extends Component {
+  render() {
+    return <ListaItens />;
+  }
+}
 
-AppRegistry.registerComponent(appName, () => App);
+AppRegistry.registerComponent("catalogo", () => catalogo);
