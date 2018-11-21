@@ -23,24 +23,24 @@ class jockeypo extends Component {
     var escolhaComputador = arrJokenpo[numComputador];
 
     var resultado;
-    if (escolhaUsuario == escolhaComputador) {
+    if (escolhaUsuario === escolhaComputador) {
       resultado = "Empate";
-    } else if (escolhaComputador == "Pedra") {
-      if (escolhaUsuario == "Papel") {
+    } else if (escolhaComputador === "Pedra") {
+      if (escolhaUsuario === "Papel") {
         resultado = "Você ganhou! :D";
       } else if (escolhaUsuario == "Tesoura") {
         resultado = "Você perdeu :(";
       }
-    } else if (escolhaComputador == "Papel") {
-      if (escolhaUsuario == "Tesoura") {
+    } else if (escolhaComputador === "Papel") {
+      if (escolhaUsuario === "Tesoura") {
         resultado = "Você ganhou! :D";
-      } else if (escolhaUsuario == "Pedra") {
+      } else if (escolhaUsuario === "Pedra") {
         resultado = "Você perdeu :(";
       }
-    } else if (escolhaComputador == "Tesoura") {
+    } else if (escolhaComputador === "Tesoura") {
       if (escolhaUsuario == "Pedra") {
         resultado = "Você ganhou! :D";
-      } else if (escolhaUsuario == "Papel") {
+      } else if (escolhaUsuario === "Papel") {
         resultado = "Você perdeu :(";
       }
     }

@@ -13,7 +13,8 @@ class Topo extends Component {
 
 const styles = StyleSheet.create({
   topo: {
-    justifyContent: "center"
+    justifyContent: "center",
+    flexDirection: 'row'
   }
 });
 
