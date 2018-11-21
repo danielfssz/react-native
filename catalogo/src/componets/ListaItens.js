@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, Text } from "react-native";
+import { ScrollView } from "react-native";
 import Item from "../componets/Item";
 import axios from "axios";
 
@@ -23,11 +23,11 @@ export default class catologo extends Component {
 
   render() {
     return (
-      <View>
-        {this.state.listaItens.map(item => {
-          return <Text>{item.titulo}</Text>;
-        })}
-      </View>
+      <ScrollView>
+        {this.state.listaItens.map(item => (
+          <Item key={item.titulo} item={item} />
+        ))}
+      </ScrollView>
     );
   }
 }
