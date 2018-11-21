@@ -4,7 +4,11 @@ import { AppRegistry, StyleSheet, Text, View, Button } from "react-native";
 class jockeypo extends Component {
   constructor(props) {
     super(props);
-    this.state = { escolhaUsuario: "", escolhaComputador: "" };
+    this.state = {
+      escolhaUsuario: "",
+      escolhaComputador: "",
+      resultado: "Faça uma jogada!"
+    };
   }
 
   jokenpo(escolhaUsuario) {
@@ -12,13 +16,37 @@ class jockeypo extends Component {
     var arrJokenpo = Array(3);
     arrJokenpo[0] = "Pedra";
     arrJokenpo[1] = "Papel";
-    arrJokenpo[2] = "Tesoura";    
+    arrJokenpo[2] = "Tesoura";
 
-    var escolhaComputador = arrJokenpo[numComputador];    
+    var escolhaComputador = arrJokenpo[numComputador];
+
+    var resultado;
+    if (escolhaUsuario == escolhaComputador) {
+      resultado = "Empate";
+    } else if (escolhaComputador == "Pedra") {
+      if (escolhaUsuario == "Papel") {
+        resultado = "Você ganhou! :D";
+      } else if (escolhaUsuario == "Tesoura") {
+        resultado = "Você perdeu :(";
+      }
+    } else if (escolhaComputador == "Papel") {
+      if (escolhaUsuario == "Tesoura") {
+        resultado = "Você ganhou! :D";
+      } else if (escolhaUsuario == "Pedra") {
+        resultado = "Você perdeu :(";
+      }
+    } else if (escolhaComputador == "Tesoura") {
+      if (escolhaUsuario == "Pedra") {
+        resultado = "Você ganhou! :D";
+      } else if (escolhaUsuario == "Papel") {
+        resultado = "Você perdeu :(";
+      }
+    }
 
     this.setState({
       escolhaUsuario: escolhaUsuario,
-      escolhaComputador: escolhaComputador
+      escolhaComputador: escolhaComputador,
+      resultado: resultado
     });
   }
 
@@ -27,7 +55,7 @@ class jockeypo extends Component {
       <View>
         <Text>Escolha do computador: {this.state.escolhaComputador}</Text>
         <Text>Escolha do usuário: {this.state.escolhaUsuario}</Text>
-        <Text>Resultado</Text>
+        <Text>Resultado: {this.state.resultado}</Text>
         <Button
           title="pedra"
           onPress={() => {
