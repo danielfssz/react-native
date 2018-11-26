@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
     marginTop: 15
   },
   menuGrupo: {
-    flexDirection: "row"    
+    flexDirection: "row"
   },
   imgMenu: {
     margin: 15
