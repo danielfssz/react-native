@@ -8,7 +8,11 @@ const AppNavigator = createStackNavigator(
     CenaCliente: CenaCliente
   },
   {
-    initialRouteName: "CenaPrincipal"
+    initialRouteName: "CenaPrincipal",
+    headerMode: "none",
+    navigationOptions: {
+      headerVisible: false
+    }
   }
 );
 
