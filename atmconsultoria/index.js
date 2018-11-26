@@ -1,7 +1,16 @@
-/** @format */
+import React, { Component } from "react";
+import { AppRegistry, View } from "react-native";
 
-import {AppRegistry} from 'react-native';
-import App from './App';
-import {name as appName} from './app.json';
+import BarraNavegacao from "./src/components/BarraNavegacao";
 
-AppRegistry.registerComponent(appName, () => App);
+export default class atmconsultoria extends Component {
+  render() {
+    return (
+      <View>
+        <BarraNavegacao />
+      </View>
+    );
+  }
+}
+
+AppRegistry.registerComponent("atmconsultoria", () => atmconsultoria);
