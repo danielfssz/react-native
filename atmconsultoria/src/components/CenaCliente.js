@@ -1,5 +1,12 @@
 import React, { Component } from "react";
-import { View, StatusBar, Image, Text, StyleSheet } from "react-native";
+import {
+  View,
+  StatusBar,
+  Image,
+  Text,
+  StyleSheet,
+  TouchableOpacity
+} from "react-native";
 import BarraNavegacao from "./BarraNavegacao";
 
 const detalheCliente = require("../../imgs/detalhe_cliente.png");
@@ -13,7 +20,9 @@ export default class CenaCliente extends Component {
       <View>
         <StatusBar backgroundColor="#B9C941" />
         <View style={styles.barraNavegacao}>
-          <Image style={styles.btnVoltar} source={btnVoltar} />
+          <TouchableOpacity onPress={() => this.props.navigation.goBack()}>
+            <Image style={styles.btnVoltar} source={btnVoltar} />
+          </TouchableOpacity>
           <BarraNavegacao />
         </View>
 

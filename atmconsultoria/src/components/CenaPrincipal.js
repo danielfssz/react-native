@@ -1,5 +1,11 @@
 import React, { Component } from "react";
-import { View, StatusBar, Image, StyleSheet } from "react-native";
+import {
+  View,
+  StatusBar,
+  Image,
+  StyleSheet,
+  TouchableOpacity
+} from "react-native";
 import BarraNavegacao from "./BarraNavegacao";
 
 const logo = require("../../imgs/logo.png");
@@ -19,7 +25,11 @@ export default class CenaPrincipal extends Component {
         </View>
         <View style={styles.menu}>
           <View style={styles.menuGrupo}>
-            <Image style={styles.imgMenu} source={menuCliente} />
+            <TouchableOpacity
+              onPress={() => this.props.navigation.navigate("CenaCliente")}
+            >
+              <Image style={styles.imgMenu} source={menuCliente} />
+            </TouchableOpacity>
             <Image style={styles.imgMenu} source={menuContato} />
           </View>
           <View style={styles.menuGrupo}>
