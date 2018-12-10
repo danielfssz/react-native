@@ -2,11 +2,13 @@ import React, { Component } from 'react';
 import { createStackNavigator, createAppContainer } from 'react-navigation';
 import CenaPrincipal from './src/components/CenaPrincipal';
 import CenaCliente from './src/components/CenaCliente';
+import CenaContatos from './src/components/CenaContatos';
 
 const AppNavigator = createStackNavigator(
   {
     CenaPrincipal: CenaPrincipal,
-    CenaCliente: CenaCliente
+    CenaCliente: CenaCliente,
+    CenaContatos: CenaContatos
   },
   {
     initialRouteName: 'CenaPrincipal',
