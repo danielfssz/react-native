@@ -8,8 +8,12 @@ export default class CenaEmpresa extends Component {
   render() {
     return (
       <View style={{ flex: 1, backgroundColor: '#FFF' }}>
-        <StatusBar backgroundColor="#CCC" />
-        <BarraNavegacao voltar navigation={this.props.navigation} />
+        <StatusBar backgroundColor="#19D1C8" />
+        <BarraNavegacao
+          voltar
+          navigation={this.props.navigation}
+          corFundo="#19D1C8"
+        />
         <View style={styles.cabecalho}>
           <Image source={detalheServico} />
           <Text style={styles.txtTitulo}>Nossos serviços</Text>

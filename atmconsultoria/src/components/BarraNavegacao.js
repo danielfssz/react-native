@@ -13,7 +13,9 @@ export default class BarraNavegacao extends Component {
   render() {
     if (this.props.voltar) {
       return (
-        <View style={styles.barraTitulo}>
+        <View
+          style={[styles.barraTitulo, { backgroundColor: this.props.corFundo }]}
+        >
           <TouchableHighlight onPress={() => this.props.navigation.pop()}>
             <Image style={styles.btnVoltar} source={btnVoltar} />
           </TouchableHighlight>

@@ -10,9 +10,9 @@ export default class CenaCliente extends Component {
   render() {
     return (
       <View style={{ flex: 1, backgroundColor: '#FFF' }}>
-        <StatusBar backgroundColor="#CCC" />
+        <StatusBar backgroundColor="#B9C941" />
 
-        <BarraNavegacao voltar navigation={this.props.navigation} />
+        <BarraNavegacao voltar navigation={this.props.navigation} corFundo='#B9C941'/>
 
         <View style={styles.cabecalho}>
           <Image source={detalheCliente} />
