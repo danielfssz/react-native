@@ -16,7 +16,11 @@ export default class BarraNavegacao extends Component {
         <View
           style={[styles.barraTitulo, { backgroundColor: this.props.corFundo }]}
         >
-          <TouchableHighlight onPress={() => this.props.navigation.pop()}>
+          <TouchableHighlight
+            underlayColor={this.props.corFundo}
+            activeOpacity={0.3}
+            onPress={() => this.props.navigation.pop()}
+          >
             <Image style={styles.btnVoltar} source={btnVoltar} />
           </TouchableHighlight>
           <Text style={styles.titulo}>ATM Consultoria</Text>

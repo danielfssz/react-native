@@ -26,11 +26,15 @@ export default class CenaPrincipal extends Component {
         <View style={styles.menu}>
           <View style={styles.menuGrupo}>
             <TouchableHighlight
+              underlayColor="#B9C941"
+              activeOpacity={0.3}
               onPress={() => this.props.navigation.push('CenaCliente')}
             >
               <Image style={styles.imgMenu} source={menuCliente} />
             </TouchableHighlight>
             <TouchableHighlight
+              underlayColor="#61BD8C"
+              activeOpacity={0.3}
               onPress={() => this.props.navigation.push('CenaContatos')}
             >
               <Image style={styles.imgMenu} source={menuContato} />
@@ -38,12 +42,16 @@ export default class CenaPrincipal extends Component {
           </View>
           <View style={styles.menuGrupo}>
             <TouchableHighlight
+              underlayColor="#EC7148"
+              activeOpacity={0.3}
               onPress={() => this.props.navigation.push('CenaEmpresa')}
             >
               <Image style={styles.imgMenu} source={menuEmpresa} />
             </TouchableHighlight>
 
             <TouchableHighlight
+              underlayColor="#19D1C8"
+              activeOpacity={0.3}
               onPress={() => this.props.navigation.push('CenaServico')}
             >
               <Image style={styles.imgMenu} source={menuServicos} />
