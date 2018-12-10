@@ -1,8 +1,6 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import { Button, View } from 'react-native';
 
 export default props => (
-  <View>
-    <Text>Comando</Text>
-  </View>
+      <Button title='Calcular' />
 );
