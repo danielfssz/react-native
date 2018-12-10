@@ -1,13 +1,13 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 import {
   Text,
   StyleSheet,
   View,
   TouchableHighlight,
   Image
-} from "react-native";
+} from 'react-native';
 
-const btnVoltar = require("../../imgs/btn_voltar.png");
+const btnVoltar = require('../../imgs/btn_voltar.png');
 
 export default class BarraNavegacao extends Component {
   render() {
@@ -31,17 +31,17 @@ export default class BarraNavegacao extends Component {
 
 const styles = StyleSheet.create({
   barraTitulo: {
-    backgroundColor: "#CCC",
+    backgroundColor: '#CCC',
     padding: 10,
     height: 60
   },
   titulo: {
     flex: 1,
     fontSize: 20,
-    textAlign: "center",
-    color: "#000"
+    textAlign: 'center',
+    color: '#000'
   },
   barraNavegacao: {
-    flexDirection: "row"
+    flexDirection: 'row'
   }
 });

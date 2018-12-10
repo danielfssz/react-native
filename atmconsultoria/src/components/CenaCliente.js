@@ -1,19 +1,18 @@
-import React, { Component } from "react";
-import { View, StatusBar, Image, Text, StyleSheet } from "react-native";
-import BarraNavegacao from "./BarraNavegacao";
+import React, { Component } from 'react';
+import { View, StatusBar, Image, Text, StyleSheet } from 'react-native';
+import BarraNavegacao from './BarraNavegacao';
 
-const detalheCliente = require("../../imgs/detalhe_cliente.png");
-const cliente1 = require("../../imgs/cliente1.png");
-const cliente2 = require("../../imgs/cliente2.png");
+const detalheCliente = require('../../imgs/detalhe_cliente.png');
+const cliente1 = require('../../imgs/cliente1.png');
+const cliente2 = require('../../imgs/cliente2.png');
 
 export default class CenaCliente extends Component {
   render() {
     return (
       <View>
-        <StatusBar backgroundColor="#B9C941" />
-        <View style={styles.barraNavegacao}>
-          <BarraNavegacao voltar />
-        </View>
+        <StatusBar backgroundColor="#CCC" />
+
+        <BarraNavegacao voltar navigation={this.props.navigation} />
 
         <View style={styles.cabecalho}>
           <Image source={detalheCliente} />
@@ -33,20 +32,16 @@ export default class CenaCliente extends Component {
 }
 
 const styles = StyleSheet.create({
-  barraNavegacao: {
-    flexDirection: "row",
-    backgroundColor: "#B9C941"
-  },
   btnVoltar: {
     margin: 10
   },
   cabecalho: {
-    flexDirection: "row",
+    flexDirection: 'row',
     marginTop: 15
   },
   txtNossosClientes: {
     fontSize: 30,
-    color: "#B9C941",
+    color: '#B9C941',
     marginTop: 20
   },
   infoCliente: {
@@ -54,7 +49,7 @@ const styles = StyleSheet.create({
   },
   txtInfoCliente: {
     fontSize: 18,
-    color: "#000",
+    color: '#000',
     marginLeft: 20
   }
 });
