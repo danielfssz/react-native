@@ -1,6 +1,7 @@
-import { createStackNavigator, createAppContainer } from "react-navigation";
-import CenaPrincipal from "./src/components/CenaPrincipal";
-import CenaCliente from "./src/components/CenaCliente";
+import React, { Component } from 'react';
+import { createStackNavigator, createAppContainer } from 'react-navigation';
+import CenaPrincipal from './src/components/CenaPrincipal';
+import CenaCliente from './src/components/CenaCliente';
 
 const AppNavigator = createStackNavigator(
   {
@@ -8,12 +9,18 @@ const AppNavigator = createStackNavigator(
     CenaCliente: CenaCliente
   },
   {
-    initialRouteName: "CenaPrincipal",
-    headerMode: "none",
+    initialRouteName: 'CenaPrincipal',
+    headerMode: 'none',
     navigationOptions: {
       headerVisible: false
     }
   }
 );
 
-export default createAppContainer(AppNavigator);
+const AppContainer = createAppContainer(AppNavigator);
+
+export default class App extends Component {
+  render() {
+    return <AppContainer />;
+  }
+}
