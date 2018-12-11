@@ -6,6 +6,8 @@ export default props => (
     keyboardType={'numeric'}
     style={styles.numero}
     underlineColorAndroid={'#000'}
+    value={props.num}
+    onChangeText={valorDoCampo => props.atualizaValor(props.nome, valorDoCampo)}
   />
 );
 
